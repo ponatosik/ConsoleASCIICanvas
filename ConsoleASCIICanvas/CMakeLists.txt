@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.5)
+
+add_library(ConsoleASCIICanvas)
+
+if (WIN32)
+    target_compile_definitions(ConsoleASCIICanvas PUBLIC IMPLEMENT_WINDOWS_API_CONSOLE_DRAWING)
+    target_compile_definitions(ConsoleASCIICanvas PRIVATE UNICODE)
+    target_include_directories(ConsoleASCIICanvas PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include/ConsoleASCIICanvas/Windows")
+    target_sources(ConsoleASCIICanvas PRIVATE src/Windows/WindowsHWrapper.cpp)
+    target_include_directories(ConsoleASCIICanvas PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/ConsoleASCIICanvas/Windows")
+    target_include_directories(ConsoleASCIICanvas PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include/ConsoleASCIICanvas/Windows/ConsoleASCIICanvas")
+endif()
+
+if (UNIX)
+    find_package(Curses REQUIRED)
+    target_compile_definitions(ConsoleASCIICanvas PUBLIC IMPLEMENT_NCURSES_CONSOLE_DRAWING)
+    target_include_directories(ConsoleASCIICanvas PRIVATE ${CURSES_INCLUDE_DIRS})
+    target_link_libraries(ConsoleASCIICanvas ${CURSES_LIBRARIES})
+    target_include_directories(ConsoleASCIICanvas PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/ConsoleASCIICanvas/Unix")
+    target_sources(ConsoleASCIICanvas PRIVATE src/Unix/ncurseswrapper.cpp)
+    target_include_directories(ConsoleASCIICanvas PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/ConsoleASCIICanvas/Unix")
+    target_include_directories(ConsoleASCIICanvas PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include/ConsoleASCIICanvas/Unix/ConsoleASCIICanvas")
+endif()
+
+target_include_directories(ConsoleASCIICanvas PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")

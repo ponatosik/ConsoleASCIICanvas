@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.5)
+
+project(ConsoleFractals LANGUAGES CXX)
+
+add_executable(ConsoleMandelbrot mandelbrotSet.cpp)
+add_executable(ConsoleSierpinski sierpinskiTriangle.cpp)
+add_executable(ConsoleJulia juliaSet.cpp)
+add_executable(ConsoleSierpinskiSqr sierpinskiSquare.cpp)
+
+target_link_libraries(ConsoleMandelbrot ConsoleASCIICanvas)
+target_link_libraries(ConsoleSierpinski ConsoleASCIICanvas)
+target_link_libraries(ConsoleJulia ConsoleASCIICanvas)
+target_link_libraries(ConsoleSierpinskiSqr ConsoleASCIICanvas)
+
+
