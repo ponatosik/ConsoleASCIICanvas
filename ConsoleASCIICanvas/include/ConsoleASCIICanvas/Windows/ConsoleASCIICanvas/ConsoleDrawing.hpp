@@ -22,31 +22,31 @@ public:
 	void start();
 	void finish();
 
-	void draw(		int x, int y, 
-					CONSOLE_CHARACTER_TYPE character , 
-					CharacterAttribute attribute = CharacterAttribute::Normal);
-	void draw(		int x, int y, 
-					ConsoleCharacter character = ConsoleCharacter::StripedBlock, 
-					CharacterAttribute attribute = CharacterAttribute::Normal);
+	void draw(int x, int y,
+			  CONSOLE_CHARACTER_TYPE character,
+			  CharacterAttribute attribute = CharacterAttribute::Normal);
+	void draw(int x, int y,
+			  ConsoleCharacter character = ConsoleCharacter::StripedBlock,
+			  CharacterAttribute attribute = CharacterAttribute::Normal);
 
-	void drawColored(int x, int y, 
-					CONSOLE_CHARACTER_TYPE character, 
-					ConsoleColor color = ConsoleColor::Red, 
-					ConsoleColor backgroundColor = ConsoleColor::Black,
-					CharacterAttribute attribute = CharacterAttribute::Normal);
-	void drawColored(int x, int y, 
-					ConsoleCharacter character = ConsoleCharacter::StripedBlock, 
-					ConsoleColor color = ConsoleColor::Red, 
-					ConsoleColor backgroundColor = ConsoleColor::Black, 
-					CharacterAttribute attribute = CharacterAttribute::Normal);
+	void drawColored(int x, int y,
+					 CONSOLE_CHARACTER_TYPE character,
+					 ConsoleColor color = ConsoleColor::Red,
+					 ConsoleColor backgroundColor = ConsoleColor::Black,
+					 CharacterAttribute attribute = CharacterAttribute::Normal);
+	void drawColored(int x, int y,
+					 ConsoleCharacter character = ConsoleCharacter::StripedBlock,
+					 ConsoleColor color = ConsoleColor::Red,
+					 ConsoleColor backgroundColor = ConsoleColor::Black,
+					 CharacterAttribute attribute = CharacterAttribute::Normal);
 
 	ConsoleSize getConsoleSize();
+
 private:
 	void resizeBuffer();
 	ConsoleSize _windowsSize;
-	CHAR_INFO* _screenBuffer;
+	CHAR_INFO *_screenBuffer;
 	SMALL_RECT _windowsRect;
 	HANDLE _consoleHandler;
 	DWORD _consoleMode;
 };
-

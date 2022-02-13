@@ -37,17 +37,17 @@ enum class CharacterAttribute : CONSOLE_ATTRIBUTE_TYPE
     ReverseColors = A_STANDOUT,
     Underline = A_UNDERLINE,
 
-//    Reversed = A_REVERSE,
-//    Blinking = A_BLINK,
-//    HalfBright = A_DIM,
-//    Bold = A_BOLD, // HalfHalfBright
-//    Protected = A_PROTECT,
-//    Invisible = A_INVIS,
-//    Alternative = A_ALTCHARSET,
+    //    Reversed = A_REVERSE,
+    //    Blinking = A_BLINK,
+    //    HalfBright = A_DIM,
+    //    Bold = A_BOLD, // HalfHalfBright
+    //    Protected = A_PROTECT,
+    //    Invisible = A_INVIS,
+    //    Alternative = A_ALTCHARSET,
 
 };
 
-CharacterAttribute operator + (CharacterAttribute attr1, CharacterAttribute attr2);
+CharacterAttribute operator+(CharacterAttribute attr1, CharacterAttribute attr2);
 
 enum class ConsoleColor : CONSOLE_COLOR_TYPE
 {

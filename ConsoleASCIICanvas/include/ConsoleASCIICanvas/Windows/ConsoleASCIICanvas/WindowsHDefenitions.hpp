@@ -2,8 +2,8 @@
 
 #include <Windows.h>
 
-#define CONSOLE_CHARACTER_TYPE wchar_t 
-#define CONSOLE_ATTRIBUTE_TYPE WORD 
+#define CONSOLE_CHARACTER_TYPE wchar_t
+#define CONSOLE_ATTRIBUTE_TYPE WORD
 #define CONSOLE_COLOR_TYPE short
 #define NUMBER_OF_DEFINED_COLORS 8
 
@@ -33,14 +33,14 @@ enum class ConsoleCharacter : CONSOLE_CHARACTER_TYPE
     Pound = 0x00A3,
 };
 
-enum class CharacterAttribute : CONSOLE_ATTRIBUTE_TYPE 
+enum class CharacterAttribute : CONSOLE_ATTRIBUTE_TYPE
 {
     Normal = 0,
     ReverseColors = COMMON_LVB_REVERSE_VIDEO,
     Underline = COMMON_LVB_UNDERSCORE,
 };
 
-CharacterAttribute operator + (CharacterAttribute attr1, CharacterAttribute attr2);
+CharacterAttribute operator+(CharacterAttribute attr1, CharacterAttribute attr2);
 
 enum class ConsoleColor : CONSOLE_COLOR_TYPE
 {
@@ -53,4 +53,3 @@ enum class ConsoleColor : CONSOLE_COLOR_TYPE
     Cyan,
     White,
 };
-

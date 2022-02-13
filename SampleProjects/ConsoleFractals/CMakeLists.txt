@@ -11,5 +11,3 @@ target_link_libraries(ConsoleMandelbrot ConsoleASCIICanvas)
 target_link_libraries(ConsoleSierpinski ConsoleASCIICanvas)
 target_link_libraries(ConsoleJulia ConsoleASCIICanvas)
 target_link_libraries(ConsoleSierpinskiSqr ConsoleASCIICanvas)
-
-

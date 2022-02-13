@@ -21,25 +21,25 @@ public:
     void update();
     void clear();
 
-    void draw(      int x, int y,
-                    CONSOLE_CHARACTER_TYPE character, 
-                    CharacterAttribute attributes = CharacterAttribute::Normal);
+    void draw(int x, int y,
+              CONSOLE_CHARACTER_TYPE character,
+              CharacterAttribute attributes = CharacterAttribute::Normal);
 
-    void draw(      int x, int y,
-                    ConsoleCharacter character = ConsoleCharacter::StripedBlock, 
-                    CharacterAttribute attributes = CharacterAttribute::Normal);
+    void draw(int x, int y,
+              ConsoleCharacter character = ConsoleCharacter::StripedBlock,
+              CharacterAttribute attributes = CharacterAttribute::Normal);
 
-    void drawColored(int x, int y, 
-                    char character, 
-                    ConsoleColor color = ConsoleColor::Red, 
-                    ConsoleColor backgroundColor = ConsoleColor::Black, 
-                    CharacterAttribute attributes = CharacterAttribute::Normal);
+    void drawColored(int x, int y,
+                     char character,
+                     ConsoleColor color = ConsoleColor::Red,
+                     ConsoleColor backgroundColor = ConsoleColor::Black,
+                     CharacterAttribute attributes = CharacterAttribute::Normal);
 
-    void drawColored(int x, int y, 
-                    ConsoleCharacter character = ConsoleCharacter::StripedBlock, 
-                    ConsoleColor color = ConsoleColor::Red, 
-                    ConsoleColor backgroundColor = ConsoleColor::Black, 
-                    CharacterAttribute attributes = CharacterAttribute::Normal);
+    void drawColored(int x, int y,
+                     ConsoleCharacter character = ConsoleCharacter::StripedBlock,
+                     ConsoleColor color = ConsoleColor::Red,
+                     ConsoleColor backgroundColor = ConsoleColor::Black,
+                     CharacterAttribute attributes = CharacterAttribute::Normal);
 
     ConsoleSize getConsoleSize();
 };

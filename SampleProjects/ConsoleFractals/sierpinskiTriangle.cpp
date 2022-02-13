@@ -8,7 +8,7 @@
 
 struct Point
 {
-    float x,y;
+    float x, y;
 };
 
 int main()
@@ -24,23 +24,23 @@ int main()
     int hight = size.hight;
     int width = size.width;
 
-    Point points[] = {{0,float(hight-1)},{float(width*10/17-1),float(hight-1)},{float(width*10/17-1)/2,0}};
+    Point points[] = {{0, float(hight - 1)}, {float(width * 10 / 17 - 1), float(hight - 1)}, {float(width * 10 / 17 - 1) / 2, 0}};
 
-    for(int i =0; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
-        drawer.drawColored(points[i].x,points[i].y,'@',ConsoleColor::Red);
+        drawer.drawColored(points[i].x, points[i].y, '@', ConsoleColor::Red);
     }
 
-    Point triangleGeneartor = points[rand()%3];
+    Point triangleGeneartor = points[rand() % 3];
 
-    for(int i =0; i < SIERPINSKI_PRECISON; i++)
+    for (int i = 0; i < SIERPINSKI_PRECISON; i++)
     {
-        Point randomPoint =  points[rand()%3];
-        triangleGeneartor.x = (triangleGeneartor.x + randomPoint.x)/2;
-        triangleGeneartor.y = (triangleGeneartor.y + randomPoint.y)/2;
-        drawer.drawColored(triangleGeneartor.x,triangleGeneartor.y,'@', ConsoleColor::Green);
+        Point randomPoint = points[rand() % 3];
+        triangleGeneartor.x = (triangleGeneartor.x + randomPoint.x) / 2;
+        triangleGeneartor.y = (triangleGeneartor.y + randomPoint.y) / 2;
+        drawer.drawColored(triangleGeneartor.x, triangleGeneartor.y, '@', ConsoleColor::Green);
         drawer.update();
-        drawer.draw(triangleGeneartor.x,triangleGeneartor.y,'@');
+        drawer.draw(triangleGeneartor.x, triangleGeneartor.y, '@');
     }
 
     drawer.update();
@@ -50,4 +50,3 @@ int main()
 
     return 0;
 }
-
