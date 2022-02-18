@@ -1,6 +1,16 @@
 cmake_minimum_required(VERSION 3.5)
 
-add_library(ConsoleASCIICanvas)
+option(CONSOLE_ASCII_CANVAS_USE_STATIC "buid and use static library" ON)
+message(STATUS "ConsoleASCIICanvas buid static library: ${CONSOLE_ASCII_CANVAS_USE_STATIC}")
+
+if(CONSOLE_ASCII_CANVAS_USE_STATIC)
+    add_library(ConsoleASCIICanvas)
+else()
+    if(MSVC)
+        set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS true)
+    endif()
+    add_library(ConsoleASCIICanvas SHARED)
+endif()
 
 if (WIN32)
     target_compile_definitions(ConsoleASCIICanvas PUBLIC IMPLEMENT_WINDOWS_API_CONSOLE_DRAWING)
