@@ -1,5 +1,5 @@
 #include <math.h>
-#include <conio.h>
+//#include <conio.h>
 #include <ConsoleASCIICanvas/ConsoleDrawing.hpp>
 
 #define MANDELBROT_PRECISON 300
@@ -51,7 +51,7 @@ int main()
 
     while (true)
     {
-        consoleInput = getch();
+        consoleInput = drawer.getKeyPressed();
 
         switch (consoleInput)
         {

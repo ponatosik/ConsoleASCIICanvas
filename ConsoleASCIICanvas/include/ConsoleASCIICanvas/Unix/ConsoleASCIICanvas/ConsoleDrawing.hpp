@@ -21,6 +21,8 @@ public:
     void update();
     void clear();
 
+    CONSOLE_CHARACTER_TYPE getKeyPressed();
+
     void draw(int x, int y,
               CONSOLE_CHARACTER_TYPE character,
               CharacterAttribute attributes = CharacterAttribute::Normal);

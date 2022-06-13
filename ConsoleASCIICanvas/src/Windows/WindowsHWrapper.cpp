@@ -1,6 +1,8 @@
 ﻿#include <stdio.h>
+#include <conio.h>
 #include <iostream>
 #include "ConsoleDrawing.hpp"
+
 
 #include <map>
 
@@ -84,6 +86,11 @@ void ConsoleDrawer::finish()
 {
 	clear();
 	update();
+}
+
+CONSOLE_CHARACTER_TYPE ConsoleDrawer::getKeyPressed()
+{
+	return getch();
 }
 
 void ConsoleDrawer::draw(int x, int y, CONSOLE_CHARACTER_TYPE character, CharacterAttribute attribute)
