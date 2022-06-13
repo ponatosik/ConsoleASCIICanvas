@@ -1,4 +1,3 @@
-#include <ncurses.h>
 #include "ConsoleDrawing.hpp"
 
 CharacterAttribute operator+(CharacterAttribute attr1, CharacterAttribute attr2)
@@ -37,6 +36,11 @@ ConsoleDrawer::ConsoleDrawer()
 ConsoleDrawer::~ConsoleDrawer()
 {
     finish();
+}
+
+CONSOLE_CHARACTER_TYPE ConsoleDrawer::getKeyPressed()
+{
+	return getch();
 }
 
 void ConsoleDrawer::start()

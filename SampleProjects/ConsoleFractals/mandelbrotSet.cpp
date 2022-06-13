@@ -1,5 +1,4 @@
 #include <math.h>
-//#include <conio.h>
 #include <ConsoleASCIICanvas/ConsoleDrawing.hpp>
 
 #define MANDELBROT_PRECISON 300
