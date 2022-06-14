@@ -20,7 +20,7 @@ double julia(double x, double y, double x0, double y0)
 
 int main()
 {
-    ConsoleDrawer drawer;
+    ConsoleDrawer& drawer = ConsoleDrawer::getInstance();
     drawer.start();
     ConsoleSize size = drawer.getConsoleSize();
     int hight = size.hight;

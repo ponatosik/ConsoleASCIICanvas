@@ -47,4 +47,5 @@ public:
 private:
     ConsoleDrawer();
     ~ConsoleDrawer();
+    static ConsoleDrawer* _drawerInstance;
 };

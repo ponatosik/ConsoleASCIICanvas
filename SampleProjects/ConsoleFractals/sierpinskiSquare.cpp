@@ -14,7 +14,7 @@ struct Point
 int main()
 {
     srand(time(NULL));
-    ConsoleDrawer drawer;
+    ConsoleDrawer& drawer = ConsoleDrawer::getInstance();
     drawer.start();
     std::this_thread::sleep_for(std::chrono::seconds(2));
     drawer.update();
