@@ -30,6 +30,14 @@ void initializePairs()
         }
 }
 
+ConsoleDrawer* ConsoleDrawer::_drawerInstance;
+
+ConsoleDrawer& ConsoleDrawer::getInstance()
+{
+	if(_drawerInstance == nullptr)
+		_drawerInstance = new ConsoleDrawer();
+	return *_drawerInstance;
+}
 ConsoleDrawer::ConsoleDrawer()
 {
 }

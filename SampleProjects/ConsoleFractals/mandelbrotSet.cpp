@@ -22,7 +22,7 @@ int mandelbrot(long double x, long double y)
 
 int main()
 {
-    ConsoleDrawer drawer;
+    ConsoleDrawer& drawer = ConsoleDrawer::getInstance();
     drawer.start();
     ConsoleSize size = drawer.getConsoleSize();
     int hight = size.hight;

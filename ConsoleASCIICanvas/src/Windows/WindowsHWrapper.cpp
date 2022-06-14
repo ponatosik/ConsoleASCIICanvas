@@ -33,6 +33,15 @@ const static std::map<ConsoleColor, CONSOLE_COLOR_TYPE> backgroundColors =
 		{ConsoleColor::Green, BACKGROUND_GREEN},
 		{ConsoleColor::Black, 0}};
 
+ConsoleDrawer* ConsoleDrawer::_drawerInstance;
+
+ConsoleDrawer& ConsoleDrawer::getInstance()
+{
+	if(_drawerInstance == nullptr)
+		_drawerInstance = new ConsoleDrawer();
+	return *_drawerInstance;
+}
+
 ConsoleDrawer::ConsoleDrawer()
 {
 	_consoleHandler = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
@@ -79,6 +88,7 @@ void ConsoleDrawer::update()
 ConsoleDrawer::~ConsoleDrawer()
 {
 	finish();
+	CloseHandle(_consoleHandler);
 	delete[] _screenBuffer;
 }
 

@@ -13,8 +13,7 @@ struct ConsoleSize
 class ConsoleDrawer
 {
 public:
-    ConsoleDrawer();
-    ~ConsoleDrawer();
+    static ConsoleDrawer& getInstance();
 
     void start();
     void finish();
@@ -44,4 +43,8 @@ public:
                      CharacterAttribute attributes = CharacterAttribute::Normal);
 
     ConsoleSize getConsoleSize();
+
+private:
+    ConsoleDrawer();
+    ~ConsoleDrawer();
 };

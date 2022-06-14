@@ -15,9 +15,9 @@ struct ConsoleSize
 class ConsoleDrawer
 {
 public:
-	ConsoleDrawer();
+	static ConsoleDrawer& getInstance();
+
 	void update();
-	~ConsoleDrawer();
 	void clear();
 	void start();
 	void finish();
@@ -45,7 +45,10 @@ public:
 	ConsoleSize getConsoleSize();
 
 private:
+	ConsoleDrawer();
+	~ConsoleDrawer();
 	void resizeBuffer();
+	static ConsoleDrawer* _drawerInstance;
 	ConsoleSize _windowsSize;
 	CHAR_INFO *_screenBuffer;
 	SMALL_RECT _windowsRect;
